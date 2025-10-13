@@ -27,5 +27,3 @@ Each directory corresponds to a chapter or concept from the Rust Book and includ
 ## Resources
 
 * [The Rust Programming Language Book](https://doc.rust-lang.org/stable/book/)
-* [Rust Standard Library](https://doc.rust-lang.org/std/)
-* [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
