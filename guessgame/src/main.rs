@@ -1,7 +1,8 @@
 use std::io;
 
 fn main(){
-    println!("input your guess");
+    println!("Welcome thee player!");
+    println!("input your guess :");
 
     let mut guess = String::new();
     io::stdin()
@@ -9,5 +10,5 @@ fn main(){
         .expect("Failed to read input");
     // 2 possible variants for the enum 'Result' returned by the io::stdin()
 
-    println!("guessed number : {guess}");
+    println!("your guessed number : {guess}");
 }
