@@ -4,6 +4,7 @@ fn main() {
     eg1();
     eg2();
     eg3();
+    condition();
 }
 
 fn print_labeled_measurement(value: i32, unit_label: char) {
@@ -44,3 +45,10 @@ fn plus_one(x: i32) -> i32 {
 }
 
 // control flow --> conditional expressions
+fn condition() {
+    let number = 3;
+//  if number {...} throws an error because rust always needs a bool in the conditional statement.
+    if number != 0 {
+        println!("number was something other than zero");
+    }
+}
