@@ -5,6 +5,7 @@ fn main() {
     eg2();
     eg3();
     condition();
+    arms();
 }
 
 fn print_labeled_measurement(value: i32, unit_label: char) {
@@ -57,4 +58,12 @@ fn condition() {
     else{
         println!("condition false")
     }
+}
+
+//arms of if:
+fn arms() {
+    let condition = true;
+    let number = if condition { 5 } else { 6 };
+
+    println!("The value of number is: {number}");
 }
