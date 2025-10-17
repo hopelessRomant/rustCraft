@@ -35,3 +35,5 @@ fn main () {
     }
     println!("final count: {count}");
 }
+
+// if and else are preetu much the same as other languages.
