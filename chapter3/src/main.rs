@@ -16,8 +16,8 @@ fn print_labeled_measurement(value: i32, unit_label: char) {
 //Expressions evaluate to a resultant value.
 
 fn eg1() {
-    let y = {
-        let x = 3;
+    let y: i32 = {
+        let x: i32 = 3;
         x + 1
     };
 
@@ -25,30 +25,36 @@ fn eg1() {
 }
 
 fn five() -> i32 {
-    5 // no semicolon to declare it as a statement.
+    5 // no semicolon, to declare it as a expression -> return value
 }
 
 fn eg2() {
-    let x = five();
+    let x: i32 = five();
 
     println!("The value of x is: {x}");
 }
 
 fn eg3() {
-    let x = plus_one(5);
+    let x: i32 = plus_one(5);
 
     println!("The value of x is: {x}");
 }
 
 fn plus_one(x: i32) -> i32 {
-    x + 1
+    x + 1 // no semicolon, to declare it as a expression -> return value
 }
 
-// control flow --> conditional expressions
+// control flow --> conditional 'expressions'
 fn condition() {
-    let number = 3;
-//  if number {...} throws an error because rust always needs a bool in the conditional statement.
-    if number != 0 {
-        println!("number was something other than zero");
+    let number = 2;
+//  'if number {...}' throws an error because rust always needs a bool in the conditional statement.
+    if number < 5 {
+        println!("less than 5");
+    } 
+    else if number % 2 == 0 {
+        println!("even number");
+    }
+    else{
+        println!("condition false")
     }
 }
