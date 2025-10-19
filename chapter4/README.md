@@ -5,3 +5,9 @@ Ownership is Rust’s most unique feature and has deep implications for the rest
 ```
 Once you understand ownership, you won’t need to think about the stack and the heap very often, but knowing that the main purpose of ownership is to manage heap data can help explain why it works the way it does
 ```
+## Ownership Rules
+Keep these rules in mind, while working through any project:
+
+1. Each value in Rust has an owner.
+2. There can only be one owner at a time.
+3. When the owner goes out of scope, the value will be dropped.
