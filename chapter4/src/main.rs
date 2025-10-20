@@ -19,4 +19,12 @@ fn main() {
     let x = 5;
     let y = x;
     println!("x = {x}, y = {y}");
+
+    // Ownership and functions
+    let s = String::from("home");
+    new_owner(s);
+}
+
+fn new_owner(new_s: String){
+    println!("{new_s}");
 }
