@@ -12,7 +12,7 @@ fn main() {
 
     // clone method
     let s1 = String::from("alice");
-    let s2 = s1.clone();
+    let s2 = s1.clone(); // this copies the data in the heap to s2
     println!("s1 = {s1}, s2 = {s2}");
 
     // int types generally store values on stack
@@ -23,8 +23,25 @@ fn main() {
     // Ownership and functions
     let s = String::from("home");
     new_owner(s);
+
+    let s1 = give_ownership();
+    println!("{s1}, is red");
+
+    let s2 = String::from("Alice");
+    let s3 = transfer_owner(s2);
+    println!("{s3} and Bob")
 }
 
 fn new_owner(new_s: String){
     println!("{new_s}");
 }
+
+fn give_ownership() -> String{
+    let new_string = String::from("apple");
+    new_string
+}
+
+fn transfer_owner(old : String) -> String {
+    let new =old;
+    new
+} 
