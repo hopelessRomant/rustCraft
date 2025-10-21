@@ -19,6 +19,9 @@ fn main() {
         r2.push_str(" -> second edit");
         println!("{r2}");
     }
+
+// Dangling references --> rust inherently does not let it happen..
+
 }
 
 fn calc_lenght(s : &String) -> usize {
