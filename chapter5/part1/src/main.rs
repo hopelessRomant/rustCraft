@@ -6,6 +6,10 @@ struct Student {
     email: String,
 }
 
+// tupple Struct
+#[allow(dead_code)]
+struct Color(i32, i32, i32);
+
 fn main() {
     let s1 = Student {
         name: String::from("Sahil"),
@@ -21,10 +25,15 @@ fn main() {
 // changing roll
     // s1 = new_roll(2214018, s1);
     let roll = s2.roll;
-    println!("{roll}")
+    println!("{roll}");
 
 // Tupple structs
-    
+    let black = Color(0,0,0);
+    let Color(x,y,z) = black;
+    println!("black color is : {x}, {y}, {z}");
+
+// unit type structs
+
 }
 
 #[allow(dead_code)]
