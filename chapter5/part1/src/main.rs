@@ -7,22 +7,24 @@ struct Student {
 }
 
 fn main() {
-    let mut s1 = Student {
+    let s1 = Student {
         name: String::from("Sahil"),
         roll: 22174019,
         department: String::from("Physics"),
         email: String::from("sahil@something.com"),
     };
-    s1 = Student {
+    let s2 = Student {
         roll: 22174018,
-        ..s1
+        ..s1 // note that the String types are moved from s1 to s2 so they no longer exist in s1 attributes.
     };
+
 // changing roll
     // s1 = new_roll(2214018, s1);
-    let roll = s1.roll;
+    let roll = s2.roll;
     println!("{roll}")
 
-
+// Tupple structs
+    
 }
 
 #[allow(dead_code)]
