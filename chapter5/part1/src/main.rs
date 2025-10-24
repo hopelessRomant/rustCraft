@@ -10,6 +10,10 @@ struct Student {
 #[allow(dead_code)]
 struct Color(i32, i32, i32);
 
+//unit structs
+#[allow(dead_code)]
+struct Alwaysture;
+
 fn main() {
     let s1 = Student {
         name: String::from("Sahil"),
@@ -33,6 +37,7 @@ fn main() {
     println!("black color is : {x}, {y}, {z}");
 
 // unit type structs
+    let _me = Alwaysture;
 
 }
 
