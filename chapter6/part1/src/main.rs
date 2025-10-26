@@ -11,7 +11,21 @@ enum Exmaples {
     Exit,
 }
 
+// methods on enum
+impl Exmaples {
+    fn dot (&self) -> (&i32,&i32,&i32) {
+        if let Exmaples::Point{x,y,z} = self {
+            return (x,y,z);
+        }
+        panic!("Not a Point variant");
+    }
+}
+
 fn main() {
     let _primary = IpAdress::V4(127, 0, 0, 1);
     let _sec = IpAdress::V6(String::from("::1"));
+
+    let a = Exmaples::Point { x: 10, y: 20, z: 15 };
+    let (x,y,z) = a.dot();
+    println!("the point is on x: {x}, y: {y}, z: {z}") 
 }
