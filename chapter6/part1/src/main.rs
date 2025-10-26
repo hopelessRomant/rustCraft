@@ -1,7 +1,14 @@
 #[allow(dead_code)]
 enum IpAdress {
-    V4(u8, u8, u8, u8),
+    V4(u8, u8, u8, u8), 
     V6(String),
+}
+
+#[allow(dead_code)]
+enum Exmaples {
+    Point {x: i32, y:i32, z:i32}, // defining struct like variants in enum
+    Color (i32, i32, i32),
+    Exit,
 }
 
 fn main() {
