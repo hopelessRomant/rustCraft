@@ -22,11 +22,12 @@ impl Exmaples {
 }
 
 // Option enum **Important**
-// #[allow(dead_code)]
 // enum Option<T>{
 //     None,
 //     Some(T),
 // }
+
+
 
 fn main() {
     let _primary = IpAdress::V4(127, 0, 0, 1);
