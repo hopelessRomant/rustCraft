@@ -1,5 +1,7 @@
 mod dealer;
+use crate::dealer::cars::AstonMartin;
 
 fn main() {
-    println!("Hello, world!");
+    let car = AstonMartin{ model: String::from("DB12")};
+    println!("The car we are selling is : {car:#?}");
 }
