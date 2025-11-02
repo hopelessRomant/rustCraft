@@ -15,7 +15,7 @@ mod front_of_house {
     }
 }
 
-pub fn eat_at_restraunt() {
+pub fn eat_at_restraunt() { // since eat_at_restraunt and front_of_house are siblings, front_of_house need not be public
     // absolute path
     crate::front_of_house::hosting::add_to_waitlist();
 
