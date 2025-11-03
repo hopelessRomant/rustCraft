@@ -50,5 +50,5 @@ pub fn eat_at_restraunt() { // since eat_at_restraunt and front_of_house are sib
 
     let mut meal = crate::back_of_house::Breakfast::monday("chai");
     meal.drink = String::from("coffe");
-    print!("{:#?}",meal);
+    print!("{:#?} \n",meal);
 }   
