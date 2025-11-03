@@ -1,5 +1,7 @@
-use lib::eat_at_restraunt;
+use lib::back_of_house;
 
 fn main () {
-    eat_at_restraunt();
+    let mut meal = back_of_house::Breakfast::monday("chai");
+    meal.drink = String::from("cofee");
+    print!("{:#?}\n", meal);
 }

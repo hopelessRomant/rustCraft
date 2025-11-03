@@ -19,7 +19,7 @@ mod front_of_house {
 fn deliver_order() {}
 
 #[allow(dead_code)]
-mod back_of_house{
+pub mod back_of_house{
     fn cook_order() {
         // --snip--
         // absolute path
