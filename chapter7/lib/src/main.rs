@@ -1,4 +1,4 @@
-use lib::back_of_house::{Appetizer, Breakfast};
+use lib::managing::{Appetizer, Breakfast};
 use lib::eat_at_restraunt as food;
 use lib::front_of_house::*;
 
