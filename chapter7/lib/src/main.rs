@@ -1,14 +1,18 @@
-use lib::managing::{Appetizer, Breakfast};
-use lib::eat_at_restraunt as food;
-use lib::front_of_house::*;
+#[allow(dead_code)]
+pub mod front_of_house;
+
+#[allow(dead_code)]
+pub mod back_of_house;
+
+pub use front_of_house::*;
+pub use back_of_house::*;
 
 fn main () {
     hosting::add_to_waitlist();
 
-    let meal = Breakfast::monday("chai");
-    food();
-    print!("{:#?}\n", meal); // the meal in the 'eat_at_restraunt function and the 'meal' defined in main have different scopes.
+    let meal = managing::Breakfast::monday("chai");
+    print!("{:#?}\n", meal);
 
-    let starter = Appetizer::Salad;
+    let starter = managing::Appetizer::Salad;
     println!("Starter order : {:?}", starter);
 }
