@@ -1,7 +1,7 @@
 #[allow(dead_code)]
-mod front_of_house {
+pub mod front_of_house {
     pub mod hosting {
-        pub fn add_to_waitlist() {}
+        pub fn add_to_waitlist() { println!("added to waitlist");}
 
         fn seat_at_table() {}
     }
