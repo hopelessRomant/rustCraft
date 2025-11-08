@@ -45,10 +45,18 @@ pub fn parse() {
 enum Collection {
     Int(i32),
     Text(String),
-    Float(f64),
+    Bool(bool),
 }
 
 // Using enums we can store different types of elements in the same vector
 pub fn enums() {
+    let table = vec![
+        Collection::Int(25),
+        Collection::Text(String::from("sahil")),
+        Collection::Bool(true),
+    ];
 
+    for i in &table {
+        println!("{:?}", i)
+    }
 }
