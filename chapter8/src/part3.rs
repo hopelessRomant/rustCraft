@@ -1,4 +1,5 @@
-use std::collections::{HashMap};
+use std::{collections::HashMap};
+use std::io;
 
 pub fn intro() {
     let mut list: HashMap<String,i32> = HashMap::new();
@@ -21,5 +22,25 @@ pub fn update() {
     let mut price: HashMap<String, i32> = HashMap::new();
     price.insert("Striker".to_string(), 599);
     let _check = price.entry("twisted love".to_string()).or_insert(499);
-    println!("{price:#?}")
+    println!("{price:#?}");
+}
+
+pub fn track () {
+    let mut statement = String::new();
+    let mut record: HashMap<String,i32> = HashMap::new();
+
+    println!("Please type you messege below:");
+    io::stdin()
+        .read_line(&mut statement)
+        .expect("failed to read line");
+
+    let clean:String = statement.chars().filter(|c| !c.is_whitespace()).collect();
+    // println!("{clean}");
+
+    for w in clean.chars() {
+        let count = record.entry(w.to_string()).or_insert(0);
+        *count +=1;
+    }
+
+    println!("{record:#?}");
 }
