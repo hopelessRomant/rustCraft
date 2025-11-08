@@ -19,9 +19,17 @@ pub fn intro() {
     let _vref = &v[1];
     v.push(7);
     // println!("refenced value is {}", vref); -> this does not work {check note on Vectore}.
-
 }
 
 pub fn parse() {
-    
+    let mut v = vec![1,2,3,4,5,6];
+
+    // for i in &v {
+    //     println!("{i}");
+    // }
+
+    for i in &mut v {
+        *i += 10; // To change the value that the mutable reference refers to, we have to use the * dereference operator
+        println!("{i}");
+    }
 }
