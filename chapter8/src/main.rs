@@ -1,10 +1,14 @@
 #[allow(dead_code)]
-pub mod part1;
-pub use part1::*;
+mod part1;
+
+#[allow(dead_code)]
+mod part2;
 
 fn main() {
-    // intro();
-    // parse();
-    enums();
+    // part1::intro();
+    // part2::parse();
+    // part3::enums();
+// --------------------
+    part2::intro();
 }
 
