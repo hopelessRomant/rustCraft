@@ -9,6 +9,6 @@ fn main() {
     // part2::parse();
     // part3::enums();
 // --------------------
-    part2::intro();
+    part2::maps();
 }
 
