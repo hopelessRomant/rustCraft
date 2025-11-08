@@ -2,13 +2,13 @@
 mod part1;
 
 #[allow(dead_code)]
-mod part2;
+mod part3;
 
 fn main() {
     // part1::intro();
     // part2::parse();
     // part3::enums();
 // --------------------
-    part2::maps();
+    part3::maps();
 }
 
