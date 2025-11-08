@@ -20,5 +20,6 @@ pub fn intro() {
 pub fn update() {
     let mut price: HashMap<String, i32> = HashMap::new();
     price.insert("Striker".to_string(), 599);
-
+    let _check = price.entry("twisted love".to_string()).or_insert(499);
+    println!("{price:#?}")
 }
