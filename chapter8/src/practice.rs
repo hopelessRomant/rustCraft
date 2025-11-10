@@ -10,13 +10,16 @@ pub fn problem1() {
 }
 
 pub fn company () {
-    let mut sales_team = sales();
+    let sales_team = sales();
     let mut members: Vec<String> = Vec::new();
     let mut department: HashMap<String,Vec<String>> = HashMap::new();
 
     for i in sales_team.split_whitespace() {
-        
+        members.push(i.to_string());
     }
+
+    department.insert("Sales".to_string(), members);
+    println!("The Departments and members are :\n {:#?}",department);
 }
 
 fn sales() -> String {
