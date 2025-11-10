@@ -17,6 +17,7 @@ pub fn company () {
     for i in sales_team.split_whitespace() {
         members.push(i.to_string());
     }
+    members.sort();
 
     department.insert("Sales".to_string(), members);
     println!("The Departments and members are :\n {:#?}",department);

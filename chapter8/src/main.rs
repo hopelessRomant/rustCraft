@@ -16,6 +16,7 @@ fn main() {
     // part3::update();
     // part3::track();
 // --------------------
-    practice::problem1();
+    // practice::problem1();
+    practice::company();
 }
 
