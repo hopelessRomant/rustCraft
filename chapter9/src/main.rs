@@ -2,5 +2,5 @@
 mod result;
 
 fn main() {
-    println!("Hello, world!");
+    result::intro();
 }
