@@ -2,5 +2,6 @@
 mod result;
 
 fn main() {
-    result::intro();
+    // result::intro();
+    result::create();
 }
