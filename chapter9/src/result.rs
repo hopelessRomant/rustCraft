@@ -44,3 +44,10 @@ pub fn prop() -> Result<String, io::Error> {
     file.read_to_string(&mut data)?;
     Ok(data)
 }
+
+pub fn flash () -> Result<String, io::Error> {
+    let mut data = String::new();
+    File::open("file.txt")?.read_to_string(&mut data)?;
+
+    Ok(data)
+}

@@ -10,7 +10,12 @@ fn main() {
     //     Err(e) => panic!("Shit happened: {:#?}", e),
     // };
 
-    match result::prop() {
+    // match result::prop() {
+    // Ok(data) => print!("read data is:\n{}", data),
+    // Err(e) => panic!("Shit happened: {:#?}", e),
+    // };
+
+    match result::flash() {
     Ok(data) => print!("read data is:\n{}", data),
     Err(e) => panic!("Shit happened: {:#?}", e),
     };
