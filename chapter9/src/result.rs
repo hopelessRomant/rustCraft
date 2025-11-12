@@ -1,5 +1,6 @@
 use std::fs::File;
 use std::io::ErrorKind;
+use std::io::{self, Read};
 
 pub fn intro() {
     let file_result = File::open("file.txt");
@@ -23,6 +24,16 @@ pub fn create() {
     };
 }
 
-pub fn read () {
-    
+pub fn read () -> Result<String, io::Error> {
+    let file = File::open("file.txt");
+    let mut file_data = match file {
+        Ok(data) => data,
+        Err(e) => return Err(e),
+    };
+
+    let mut note = String::new();
+    match file_data.read_to_string(&mut note) {
+        Ok(_) => Ok(note),
+        Err(e) => Err(e),
+    }
 }
