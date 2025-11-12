@@ -37,3 +37,10 @@ pub fn read () -> Result<String, io::Error> {
         Err(e) => Err(e),
     }
 }
+
+pub fn prop() -> Result<String, io::Error> {
+    let mut file = File::open("file.txt")?;
+    let mut data = String::new();
+    file.read_to_string(&mut data)?;
+    Ok(data)
+}
