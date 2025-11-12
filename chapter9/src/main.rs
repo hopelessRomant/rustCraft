@@ -3,5 +3,6 @@ mod result;
 
 fn main() {
     // result::intro();
-    result::create();
+    // result::create();
+    result::read();
 }
