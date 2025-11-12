@@ -5,7 +5,7 @@ fn main() {
     // result::intro();
     // result::create();
     match result::read() {
-        Ok(data) => print!("read data is:\n {}", data),
+        Ok(data) => print!("read data is:\n{}", data),
         Err(e) => panic!("Shit happened: {:#?}", e),
     };
 }
