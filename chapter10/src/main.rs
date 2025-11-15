@@ -2,5 +2,5 @@
 mod part1;
 
 fn main() {
-    println!("Hello, world!");
+    println!("{}",part1::ch(24));
 }
