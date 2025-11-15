@@ -2,5 +2,5 @@
 mod part1;
 
 fn main() {
-    println!("{}",part1::ch(24));
+    let _loc = part1::Point{x:10, y:15};
 }
