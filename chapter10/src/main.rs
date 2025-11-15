@@ -2,5 +2,6 @@
 mod part1;
 
 fn main() {
-    let _loc = part1::Point{x:10, y:15};
+    let loc = part1::Point{x:10, y:15};
+    println!("location is ({},{})",loc.x,loc.y);
 }
