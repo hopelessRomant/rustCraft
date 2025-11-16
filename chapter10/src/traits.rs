@@ -22,3 +22,9 @@ impl Summary for NewsAtricle {
         format!("Headline to the given article is: {}", self.heading)
     }
 }
+
+impl Summary for ResearchArticle {
+    fn headline (&self) -> String {
+        format!("Headline to the given article is: {}", self.title)
+    }
+}
