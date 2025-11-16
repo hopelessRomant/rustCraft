@@ -3,7 +3,7 @@ pub trait Summary {
 }
 
 pub struct NewsAtricle {
-    heading: String,
+    pub heading: String,
     body: String,
     author: String,
     date: String,
@@ -20,6 +20,15 @@ pub struct ResearchArticle {
 impl Summary for NewsAtricle {
     fn headline (&self) -> String {
         format!("Headline to the given article is: {}", self.heading)
+    }
+}
+
+impl NewsAtricle {
+    pub fn data (heading: String) -> NewsAtricle{
+        NewsAtricle { heading: heading,
+        body: ("wrold is going to end").to_string(),
+        author: ("Sahil Singh").to_string(),
+        date: ("16 - 11 - 2025").to_string()}
     }
 }
 
