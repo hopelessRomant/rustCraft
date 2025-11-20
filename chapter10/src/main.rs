@@ -12,5 +12,5 @@ fn main() {
     // println!("mod of the point is: {}", loc.distance());
 
     let news1 = NewsAtricle::data("World is going to end !!!".to_string());
-    println!("latest news of the day: {}", news1.headline());
+    println!("latest news of the day: {}\n presented by: {}", news1.headline(), news1.authors());
 }

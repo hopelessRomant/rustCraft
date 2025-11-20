@@ -1,14 +1,8 @@
 pub trait Summary {
     fn headline (&self) -> String;
+    fn authors (&self) -> String;
 }
 
-// default implimentaion
-#[allow(unconditional_recursion)]
-pub trait Authors {
-    fn authors (&self) -> String {
-        format!("{:#?}", self.authors())
-    }
-}
 
 pub struct NewsAtricle {
     pub heading: String,
@@ -29,6 +23,10 @@ impl Summary for NewsAtricle {
     fn headline (&self) -> String {
         format!("{}", self.heading)
     }
+
+    fn authors (&self) -> String {
+        format!("{:#?}", self.authors)
+    }
 }
 
 impl NewsAtricle {
@@ -43,6 +41,10 @@ impl NewsAtricle {
 impl Summary for ResearchArticle {
     fn headline (&self) -> String {
         format!("{}", self.title)
+    }
+
+    fn authors (&self) -> String {
+        format!("{:#?}", self.authors)
     }
 }
 
