@@ -38,6 +38,8 @@ impl Summary for ResearchArticle {
     }
 }
 
-pub fn notify<T: Summary> (item: &T) {
+
+// traint bound syntax
+pub fn notify_bound<T: Summary> (item: &T) {
     println!("breaking news: {}", item.headline());
 }
