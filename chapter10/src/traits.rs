@@ -39,7 +39,12 @@ impl Summary for ResearchArticle {
 }
 
 
-// traint bound syntax
+// traint bound syntax -> usefull when contraining the types on the parameters
 pub fn notify_bound<T: Summary> (item: &T) {
+    println!("breaking news: {}", item.headline());
+}
+
+// &impl method -> to keep the type independence
+pub fn notify_impl(item: &impl Summary) {
     println!("breaking news: {}", item.headline());
 }
