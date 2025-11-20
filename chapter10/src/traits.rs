@@ -37,3 +37,7 @@ impl Summary for ResearchArticle {
         format!("{}", self.title)
     }
 }
+
+pub fn notify<T: Summary> (item: &T) {
+    println!("breaking news: {}", item.headline());
+}
