@@ -49,7 +49,7 @@ impl Summary for ResearchArticle {
 }
 
 
-// traint bound syntax -> usefull when contraining the types on the parameters
+// trait bound syntax -> usefull when contraining the types on the parameters
 pub fn notify_bound<T: Summary> (item: &T) {
     println!("breaking news: {}", item.headline());
 }
@@ -59,4 +59,4 @@ pub fn notify_impl(item: &impl Summary) {
     println!("breaking news: {}", item.headline());
 }
 
-// + symbol to use multiple traits ni parameters and bounds
+// + symbol to use multiple traits ni parameters and bounds -> pub fn notify (item: &(impl Summary + Display) {}
