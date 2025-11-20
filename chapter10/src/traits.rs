@@ -2,6 +2,10 @@ pub trait Summary {
     fn headline (&self) -> String;
 }
 
+pub trait Authors {
+    fn authors<T> (&self) -> &T;
+}
+
 pub struct NewsAtricle {
     pub heading: String,
     body: String,
