@@ -2,14 +2,18 @@ pub trait Summary {
     fn headline (&self) -> String;
 }
 
+// default implimentaion
+#[allow(unconditional_recursion)]
 pub trait Authors {
-    fn authors<T> (&self) -> &T;
+    fn authors (&self) -> String {
+        format!("{:#?}", self.authors())
+    }
 }
 
 pub struct NewsAtricle {
     pub heading: String,
     body: String,
-    author: String,
+    authors: Vec<String>,
     date: String,
 }
 
@@ -31,7 +35,7 @@ impl NewsAtricle {
     pub fn data (heading: String) -> NewsAtricle{
         NewsAtricle { heading: heading,
         body: ("Blame the aliens").to_string(),
-        author: ("Sahil Singh").to_string(),
+        authors: vec![("Sahil Singh").to_string()],
         date: ("16 - 11 - 2025").to_string()}
     }
 }
@@ -52,3 +56,5 @@ pub fn notify_bound<T: Summary> (item: &T) {
 pub fn notify_impl(item: &impl Summary) {
     println!("breaking news: {}", item.headline());
 }
+
+// + symbol to use multiple traits ni parameters and bounds
