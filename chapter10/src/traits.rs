@@ -3,7 +3,6 @@ pub trait Summary {
     fn authors (&self) -> String;
 }
 
-
 pub struct NewsAtricle {
     pub heading: String,
     body: String,
@@ -47,7 +46,6 @@ impl Summary for ResearchArticle {
         format!("{:#?}", self.authors)
     }
 }
-
 
 // trait bound syntax -> usefull when contraining the types on the parameters
 pub fn notify_bound<T: Summary> (item: &T) {
