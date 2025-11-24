@@ -38,10 +38,11 @@ fn longest_lft<'a>(x: &'a str, y: &'a str) -> &'a str {
 // the generic lifetime 'a will get the concrete lifetime that is equal to the smaller of the lifetimes of x and y.
 
 pub fn scope_lft() {
-    let s1 = "Water";
+    let s1 = String::from("Colder");
+    let result;
     {
-        let s2 = "Hoter";
-        let result = longest_lft(s1, s2);
+        let s2 = String::from("Hoter");
+        result = longest_lft(s1.as_str(), s2.as_str());
         println!("The longet string is: {}", result);
     };
     // println!("{}",result); // this returns an error 
