@@ -24,7 +24,7 @@ fn main() {
 
     // --- lifetime ---
 
-    lifetime::scope();
-    lifetime::slices();
-
+    // lifetime::scope();
+    // lifetime::slices();
+    lifetime::scope_lft();
 }
