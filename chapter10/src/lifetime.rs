@@ -47,3 +47,14 @@ pub fn scope_lft() {
     };
     // println!("{}",result); // this returns an error 
 }
+
+// The lifetime of all string literals is 'static. So they live for the entierty of the programme.
+pub fn static_str() {
+    let s1 = "Arceus";
+    let result;
+    {
+        let s2 = "Giratina";
+        result = longest_lft(s1, s2);
+    }
+    println!("longest string is: {}", result);
+}
