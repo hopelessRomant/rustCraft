@@ -5,10 +5,12 @@ mod parse;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    let (query, path) = parse::arg_input(&args);
-    println!("target string is '{query}'");
-    println!("at path '{path}'");
+    let _config = parse::arg_input(&args);
 
-    let content = parse::parse(path);
-    println!("with the content:\n{}", content);
+    // println!("target string is '{query}'");
+    // println!("at path '{path}'");
+
+    // let content = parse::parse(path);
+    // println!("with the content:\n{}", content);
+
 }
