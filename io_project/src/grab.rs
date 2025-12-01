@@ -6,7 +6,7 @@ pub struct Input {
     pub path: String,
 }
 
-pub fn arg_input(args: &[String]) -> Input{
+pub fn input_args(args: &[String]) -> Input{
 
     Input{
         query: args[1].to_string(),
@@ -15,6 +15,6 @@ pub fn arg_input(args: &[String]) -> Input{
 
 }
 
-pub fn parse (path: &str) -> String {
+pub fn file_data (path: &str) -> String {
     fs::read_to_string(path).expect("shit happened")
 } 
