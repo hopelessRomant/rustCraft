@@ -19,6 +19,7 @@ impl Input {
     }
 }
 
-pub fn file_data (path: &str) -> String {
-    fs::read_to_string(path).expect("file not read")
+pub fn file_data (path: &str) -> Result<String, Box<dyn Error>> {
+    let contents = fs::read_to_string(path);
+    Ok(contents?)
 } 
