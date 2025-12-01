@@ -1,4 +1,4 @@
-use std::fs;
+use std::{error::Error, fs};
 
 #[derive(Debug)]
 pub struct Input {
@@ -7,14 +7,15 @@ pub struct Input {
 }
 
 impl Input {
-    pub fn new(args: &[String]) -> Result<Input, &'static str> {
+    pub fn build(args: &[String]) -> Result<Input, &'static str> {
         if args.len() < 3 {
-            return Err("Need complete set of argument to proceed");
+            return Err("Need the complete set of arguments to proceed");
+        } else {
+            Ok(Input { 
+                query: args[1].to_string(), 
+                path: args[2].to_string() 
+            })
         }
-
-        Ok(
-            Input { query: args[1].to_string(), path: args[2].to_string() }
-        )
     }
 }
 
