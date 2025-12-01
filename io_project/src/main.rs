@@ -1,14 +1,14 @@
 use std::env;
-use std::fs;
+
+#[allow(dead_code)]
+mod parse;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    let target = &args[1];
-    let path = &args[2];
-
-    println!("target string is '{target}'");
+    let (query, path) = parse::arg_input(&args);
+    println!("target string is '{query}'");
     println!("at path '{path}'");
 
-    let content = fs::read_to_string(path).expect("unable to read the file");
+    let content = parse::parse(path);
     println!("with the content:\n{}", content);
 }
