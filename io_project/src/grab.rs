@@ -6,13 +6,13 @@ pub struct Input {
     pub path: String,
 }
 
-pub fn input_args(args: &[String]) -> Input{
-
-    Input{
-        query: args[1].to_string(),
-        path: args[2].to_string(),
+impl Input {
+    pub fn new(args: &[String]) -> Input {
+        Input { 
+            query: args[1].to_string(), 
+            path: args[2].to_string() 
+        }
     }
-
 }
 
 pub fn file_data (path: &str) -> String {

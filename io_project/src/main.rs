@@ -5,12 +5,11 @@ mod grab;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    let config = grab::input_args(&args);
-
+    let config = grab::Input::new(&args);
+    let content = grab::file_data(&config.path);
+    
     println!("target string is '{}'", config.query);
     println!("at path '{}'", config.path);
-
-    let content = grab::file_data(&config.path);
     println!("with the content:\n{}", content);
 
 }
