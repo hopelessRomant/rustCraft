@@ -1,7 +1,7 @@
 use super::*;
 
 #[test]
-fn search_search() {
+fn case_sensitive() {
     let query = "is";
     let content = "\
 Rust:
@@ -13,7 +13,7 @@ nice to meet you.";
 }
 
 #[test]
-fn no_case() {
+fn case_insensitive() {
     let query = "kInG";
     let content = "/
 KiNg:
@@ -23,5 +23,4 @@ STnDing
 forKING";
 
     assert_eq!(vec!["KiNg:", "sulkIng", "forKING"], ci_search(query, content));
-
 }
