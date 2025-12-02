@@ -19,7 +19,7 @@ fn main() {
         process::exit(1);
     });
 
-    let output = ops::search(&config.query, &content);
+    let output = ops::cs_search(&config.query, &content);
     if output.len() == 0 {
         println!("No such line containing '{}' was found in {}", config.query, config.path);
     } else {
