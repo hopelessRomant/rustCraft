@@ -20,5 +20,9 @@ fn main() {
     });
 
     let output = search::result(&config.query, &content);
-    println!("Desired data lines are:\n{:#?}",output);
+    if output.len() == 0 {
+        println!("No such line containing '{}' was found in {}", config.query, config.path);
+    } else {
+        println!("Search results for lines containing '{}' in the given file are:\n{:#?}", config.query, output);
+    }
 }
