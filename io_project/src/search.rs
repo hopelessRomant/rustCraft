@@ -1,11 +1,11 @@
-pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    let mut results = Vec::new();
+pub fn result<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+    let mut slices = Vec::new();
     for line in contents.lines() {
         if line.contains(query) {
-            results.push(line);
+            slices.push(line);
         }
     }
-    results 
+    slices 
 }
 
 #[cfg(test)]
@@ -21,6 +21,6 @@ Hello!
 my name is Sahil Singh
 nice to meet you.";
 
-        assert_eq!(vec!["my name is Sahil Singh"], search(query, contents));
+        assert_eq!(vec!["my name is Sahil Singh"], result(query, contents));
     }
 }
