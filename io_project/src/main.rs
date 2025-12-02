@@ -4,7 +4,7 @@ use std::{process,env};
 mod grab;
 
 #[allow(dead_code)]
-mod search;
+mod ops;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -19,7 +19,7 @@ fn main() {
         process::exit(1);
     });
 
-    let output = search::result(&config.query, &content);
+    let output = ops::search(&config.query, &content);
     if output.len() == 0 {
         println!("No such line containing '{}' was found in {}", config.query, config.path);
     } else {
