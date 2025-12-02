@@ -9,7 +9,6 @@ pub struct Input {
 
 impl Input {
     pub fn build(args: &[String]) -> Result<Input, &'static str> {
-        println!("{:#?}", args);
         if args.len() < 3 {
             return Err("Need the complete set of inputs to proceed");
         } else {
