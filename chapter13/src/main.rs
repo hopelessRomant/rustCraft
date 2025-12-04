@@ -14,5 +14,6 @@ fn main () {
     // let giveaway1 = stock.give_away(user1);
     // let giveaway2 = stock.give_away(user2);
 
-    closure::reff();
+    // closure::reff();
+    closure::thread();
 }
