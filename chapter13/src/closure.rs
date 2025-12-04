@@ -1,10 +1,10 @@
 pub fn reff() {
-    let list = vec![1, 2, 3];
+    let mut list = vec![1, 2, 3];
     println!("Before defining closure: {list:?}");
 
-    let only_borrows = || println!("From closure: {list:?}");
+    let mut only_borrows = || list.push(5);
 
-    println!("Before calling closure: {list:?}");
+    // println!("Before calling closure: {list:?}"); // immutable borrow not allowe after mutable borrow
     only_borrows();
     println!("After calling closure: {list:?}");
 }
