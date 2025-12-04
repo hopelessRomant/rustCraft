@@ -1,17 +1,24 @@
 use std::{collections::HashMap};
 
-pub trait Event {
-    fn give_away(&self, choice: Option<Tshirts>) -> Tshirts;
-    fn most_stocked(&self) -> Tshirts;
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+pub enum Tshirts {
+    Red,
+    Green,
+    Blue,
 }
 
 pub type Inventory = HashMap<Tshirts, i32>;
+pub trait Event {
+    fn give_away(&self, choice: Option<Tshirts>) -> Tshirts;
+    fn most_stocked(&self) -> Tshirts;
+    fn build(red: i32, green: i32, blue: i32) -> Inventory{
+        let mut stock = Inventory::new();
+        stock.insert(Tshirts::Red, red);
+        stock.insert(Tshirts::Green, green);
+        stock.insert(Tshirts::Blue, blue);
 
-#[derive(Debug, Clone, Copy)]
-pub enum Tshirts {
-    Red,
-    Blue,
-    Green,
+        stock
+    }
 }
 
 impl Event for Inventory {
