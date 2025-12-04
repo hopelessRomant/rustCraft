@@ -1,6 +1,9 @@
 #[allow(dead_code)]
 mod store;
 
+#[allow(dead_code)]
+mod closure;
+
 // use store::*;
 
 fn main () {
@@ -11,12 +14,5 @@ fn main () {
     // let giveaway1 = stock.give_away(user1);
     // let giveaway2 = stock.give_away(user2);
 
-    let list = vec![1, 2, 3];
-    println!("Before defining closure: {list:?}");
-
-    let only_borrows = || println!("From closure: {list:?}");
-
-    println!("Before calling closure: {list:?}");
-    only_borrows();
-    println!("After calling closure: {list:?}");
+    closure::reff();
 }
