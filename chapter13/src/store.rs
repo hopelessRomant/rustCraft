@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 pub enum Tshirts {
     Red,
     Blue,
@@ -5,9 +7,7 @@ pub enum Tshirts {
 }
 
 pub struct Inventory {
-    pub red: i32,
-    pub blue: i32,
-    pub green: i32,
+    stock: HashMap<String, i32>
 }
 
 impl Inventory {
