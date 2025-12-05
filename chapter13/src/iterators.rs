@@ -22,3 +22,9 @@ mod test {
         assert_eq!(sum, 17);
     }
 }
+
+pub fn itr_method() {
+    let v1 = vec![2,3,5,7];
+    let v2: Vec<i32> = v1.iter().map(|x| x+1).collect(); // .map() return a new iterator and .collect() truns it into the sepecified type.
+    println!("{v2:?}");
+}
