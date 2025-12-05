@@ -15,5 +15,6 @@ fn main () {
     // let giveaway2 = stock.give_away(user2);
 
     // closure::reff();
-    closure::thread();
+    // closure::thread();
+    closure::fnmut_trait();
 }

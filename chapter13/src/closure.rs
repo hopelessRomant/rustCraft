@@ -26,3 +26,26 @@ pub fn thread() {
         .join()
         .unwrap();
 }
+
+#[derive(Debug)]
+struct Rectangle {
+    width: i32,
+    height: i32
+}
+// FnMut trait does not allow to move any value out of the environment 
+pub fn fnmut_trait() {
+    let mut list = [
+        Rectangle {width: 10, height: 11},
+        Rectangle {width: 11, height: 15},
+        Rectangle {width: 8, height: 14},
+    ];
+
+    let mut _sort_operations: Vec<String> = Vec::new();
+    let _value = String::from("closure called");
+
+    list.sort_by_key(|r| {
+        // sort_operations.push(value); // value cannot be moved out of the environment since sort_by_key is implimented on FnMut trait.
+        r.width
+    });
+    println!("{list:#?}");
+}
