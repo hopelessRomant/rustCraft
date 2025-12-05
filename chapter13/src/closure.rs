@@ -43,9 +43,11 @@ pub fn fnmut_trait() {
     let mut _sort_operations: Vec<String> = Vec::new();
     let _value = String::from("closure called");
 
+    let mut sort_ops = 0;
     list.sort_by_key(|r| {
         // sort_operations.push(value); // value cannot be moved out of the environment since sort_by_key is implimented on FnMut trait.
+        sort_ops +=1;
         r.width
     });
-    println!("{list:#?}");
+    println!("{list:#?}\nsorted in {sort_ops} operations");
 }
