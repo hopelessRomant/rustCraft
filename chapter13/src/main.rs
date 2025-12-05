@@ -19,6 +19,4 @@ fn main () {
     // closure::reff();
     // closure::thread();
     // closure::fnmut_trait();
-
-    iterators::inter();
 }
