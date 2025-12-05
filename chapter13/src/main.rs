@@ -20,5 +20,5 @@ fn main () {
     // closure::thread();
     // closure::fnmut_trait();
 
-    
+    iterators::inter();
 }
