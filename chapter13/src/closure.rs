@@ -14,7 +14,7 @@ pub fn reff() {
 pub fn type_inf() {
     let eg = |x| x;
     let _s = eg("closure example".to_string());
-    // let n = eg(3); // eg is already labelled as a String to not integer allowed now.
+    // let n = eg(3); // eg is already labelled as a String, so no integer allowed now.
 }
 
 // 'move' keyword to force transfer ownership into the closure, example case: threads.
