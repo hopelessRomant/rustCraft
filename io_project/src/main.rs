@@ -7,9 +7,9 @@ mod grab;
 mod ops;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args = env::args();
 
-    let config = grab::Input::build(&args).unwrap_or_else(|err| {
+    let config = grab::Input::build(args).unwrap_or_else(|err| {
         eprintln!("Input Error: {err}");
         process::exit(1);
     });

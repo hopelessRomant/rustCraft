@@ -1,4 +1,4 @@
-use std::{env::var, error::Error, fs};
+use std::{env, error::Error, fs};
 
 #[derive(Debug)]
 pub struct Input {
@@ -8,16 +8,22 @@ pub struct Input {
 }
 
 impl Input {
-    pub fn build(args: &[String]) -> Result<Input, &'static str> {
-        if args.len() < 3 {
-            return Err("Need the complete set of inputs to proceed");
-        } else {
-            Ok(Input { 
-                query: args[1].to_string(), 
-                path: args[2].to_string(), 
-                case: !var("IGNORE_CASE").is_ok(),
-            })
-        }
+    pub fn build(mut args: impl Iterator<Item = String>,) -> Result<Input, &'static str> {
+        args.next();
+
+        let query = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a query string"),
+        };
+
+        let file_path = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a file path"),
+        };
+
+        let ignore_case = env::var("IGNORE_CASE").is_ok();
+
+        Ok(Input { query, path: file_path, case: ignore_case })
     }
 }
 
