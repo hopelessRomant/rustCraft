@@ -11,4 +11,14 @@ mod test {
         assert_eq!(l1_itr.next(), Some(&7));
         assert_eq!(l1_itr.next(), None);
     }
+
+    #[test]
+    fn sum() {
+        let v1 = vec![2,3,5,7];
+        let v1_itr = v1.iter();
+
+        let sum: i32 = v1_itr.sum(); // takes ownerhship of the iter 'consumes the iter'
+        // let test = v1_itr.next();
+        assert_eq!(sum, 17);
+    }
 }
