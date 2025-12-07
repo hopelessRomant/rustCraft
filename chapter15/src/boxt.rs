@@ -45,9 +45,10 @@ pub fn deref() {
     assert_eq!(y, *x); // Deref trait returns the reference to "Chrysanthemum"
 }
 
-// implicit coercion converts one type that impliments Deref into another, when called through functions or mthods
+// implicit coercion converts one type that impliments Deref into another, when called through functions or methods
 pub fn coerc() {
     let string = String::from("This will be turned to &str implicitly");
+    let _str = &string[..];
     change_to_str(&string);
 }
 
