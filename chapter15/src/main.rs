@@ -9,5 +9,5 @@ fn main() {
     // boxt::cons_list();
     // boxt::coerc();
 
-    drop::test();
+    drop::drop_test();
 }
