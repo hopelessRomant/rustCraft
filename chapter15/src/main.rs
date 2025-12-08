@@ -4,10 +4,15 @@ mod boxt;
 #[allow(dead_code)]
 mod drop;
 
+#[allow(dead_code)]
+mod rct;
+
 fn main() {
     // boxt::basic();
     // boxt::cons_list();
     // boxt::coerc();
 
-    drop::drop_test();
+    // drop::drop_test();
+
+    
 }

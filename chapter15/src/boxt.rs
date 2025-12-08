@@ -7,7 +7,7 @@ pub fn basic() {
 }
 
 #[derive(Debug)]
-enum List {
+pub enum List {
     Cons(i32, Box<List>),
     Nil
 }
