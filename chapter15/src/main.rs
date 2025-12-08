@@ -14,5 +14,5 @@ fn main() {
 
     // drop::drop_test();
 
-    
+    rct::multiple_owner();
 }
