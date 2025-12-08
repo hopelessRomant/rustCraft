@@ -20,4 +20,6 @@ pub fn multiple_owner() {
         println!("count after creating c = {}", Rc::strong_count(&a));
     }
     println!("count after c goes out of scope = {}", Rc::strong_count(&a));
-}       
+}
+
+// However, Rc<T> restricts reference to mutability.
