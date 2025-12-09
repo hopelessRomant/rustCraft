@@ -29,11 +29,11 @@ where
         let fraction = self.value as f32 / self.max as f32;
 
         if fraction >=1.0 {
-            self.messege.send("you have exhausted your quota");
-        } else if fraction >= 0.75 {
-            self.messege.send("you have over 75 percent");
+            self.messege.send("you have exhausted your API quota");
+        } else if 1.0 >= fraction && fraction >= 0.75 {
+            self.messege.send("you have used up over 75 percent API calls");
         }  else {
-            self.messege.send("safe range")
+            self.messege.send("safe range (")
         }
     }
 }
