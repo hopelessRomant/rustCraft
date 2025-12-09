@@ -37,3 +37,19 @@ where
         }
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+    use std::cell::RefCell;
+
+    struct Mock {
+        output: RefCell<Vec<String>>
+    }
+
+    impl Messenger for Mock {
+        fn send(&self, note: &str) {
+            // self.output.push(note.to_string()); // we don't want ot make this ref mutable for API security
+        }
+    }
+}
