@@ -23,4 +23,6 @@ fn main() {
     // rct::multiple_owner();
 
     // refcell::multi_mut_ref();
+
+    refcycle::overflow();
 }
