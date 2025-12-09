@@ -10,6 +10,9 @@ mod rct;
 #[allow(dead_code)]
 mod refcell;
 
+#[allow(dead_code)]
+mod refcycle;
+
 fn main() {
     // boxt::basic();
     // boxt::cons_list();
@@ -19,5 +22,5 @@ fn main() {
 
     // rct::multiple_owner();
 
-    refcell::multi_mut_ref();
+    // refcell::multi_mut_ref();
 }
