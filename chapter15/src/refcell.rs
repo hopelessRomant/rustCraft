@@ -6,7 +6,7 @@ pub trait Messenger {
 }
 
 #[derive(Debug)]
-pub struct Tracker<'a, T: Messenger> {
+struct Tracker<'a, T: Messenger> {
     messege: &'a T, // implimenting type constraint for messege value.
     value: usize,
     max: usize
@@ -50,6 +50,19 @@ mod test {
     impl Messenger for Mock {
         fn send(&self, note: &str) {
             // self.output.push(note.to_string()); // we don't want ot make this ref mutable for API security
+            self.output.borrow_mut().push(note.to_string());
         }
     }
+
+    #[test]
+    fn test() {
+        let mock = Mock {
+            output: RefCell::new(vec![])
+        };
+        let mut tracker = Tracker::new(&mock, 100);
+
+        tracker.set_value(78);
+        assert_eq!(mock.output.borrow()[0], "you have used up over 75 percent API calls")
+    }
+
 }
