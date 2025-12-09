@@ -18,4 +18,6 @@ fn main() {
     // drop::drop_test();
 
     // rct::multiple_owner();
+
+    refcell::multi_mut_ref();
 }
