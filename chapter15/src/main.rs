@@ -28,5 +28,5 @@ fn main() {
 
     // refcycle::overflow();
 
-
+    tree::sample_tree();
 }
