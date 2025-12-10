@@ -1,3 +1,6 @@
+#[allow(dead_code)]
+mod thread;
+
 fn main() {
-    println!("Hello, world!");
+    thread::thread_test();
 }
