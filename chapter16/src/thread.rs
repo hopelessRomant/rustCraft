@@ -9,12 +9,14 @@ pub fn thread_test () {
         }
     });
 
+    handle.join().unwrap();
+
     for i in 1..5 {
         print!("main count: {i} ");
         thread::sleep(Duration::from_millis(1));
     }
 
-    handle.join().unwrap();
+   
 }
 
 
