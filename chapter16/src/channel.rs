@@ -26,3 +26,26 @@ pub fn channel_iter() {
         println!("Messege recieved:\n{}", j);
     }
 }
+
+pub fn mpsc() {
+    let (tx0, rx) = mpsc::channel();
+    let tx1 = tx0.clone();
+
+    thread::spawn(move || {
+        let msg0 = vec!["Hi", "are"];
+        for i in msg0 {
+            tx0.send(i).unwrap();
+        }
+    });
+
+    thread::spawn(move || {
+        let msg1 = vec!["how", "are"];
+        for j in msg1 {
+            tx1.send(j).unwrap();
+        }
+    });
+
+    for msg in rx {
+        println!("{}", msg);
+    }
+}
