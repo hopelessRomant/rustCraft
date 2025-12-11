@@ -8,5 +8,6 @@ fn main() {
     // thread::thread_test();
     // thread::move_ownership();
 
-    channel::sample_channel();
+    // channel::sample_channel();
+    channel::channel_iter();
 }
