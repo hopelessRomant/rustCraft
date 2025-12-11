@@ -39,7 +39,7 @@ pub fn mpsc() {
     });
 
     thread::spawn(move || {
-        let msg1 = vec!["how", "are"];
+        let msg1 = vec!["how", "you"];
         for j in msg1 {
             tx1.send(j).unwrap();
         }

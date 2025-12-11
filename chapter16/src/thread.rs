@@ -25,5 +25,6 @@ pub fn move_ownership() {
         println!("this value is now owned by the thread:\n {:?}", v)
     });
 
+    // println!("{:?}", v);  no luck using 'v' again
     handle.join().unwrap();
 }
