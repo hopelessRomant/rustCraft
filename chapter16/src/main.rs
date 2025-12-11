@@ -15,6 +15,6 @@ fn main() {
     // channel::channel_iter();
     // channel::mpsc();
 
-
+    sharing::sample_mutx();
 
 }
